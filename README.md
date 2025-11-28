@@ -63,6 +63,18 @@ options:
 ```
 
 
+### 📚 Citation
+
+If you use **CG-DNA-PARAM** or this repository in your research, please cite:
+
+> **Faustino, I., & Marrink, S. J. (2017).  
+> cgHeliParm: analysis of dsDNA helical parameters for coarse-grained MARTINI molecular dynamics simulations.  
+> *Bioinformatics*. btx444.**  
+> https://doi.org/10.1093/bioinformatics/btx444
+
+Please include this citation in any publications, presentations, or derived work.
+
+
 Output is stored as a .npz file in the output folder with keys {basepair_parameters, step_parameters, local_parameters}
 Each key corresponds to value which is a numpy array with dimensions (n_frames, n_residues, params)
 
