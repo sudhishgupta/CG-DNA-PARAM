@@ -1,4 +1,6 @@
-# 🧬 **CG-DNA-PARAM – Coarse-Grained DNA Parameter Calculator**
+<h1 align='center'>🧬CG-DNA-PARAM🧬</h1>
+<h3 align='center'>Coarse-Grained DNA Parameter Calculator</h3>
+
 
 This repository provides a **Python3 implementation** of helical parameter calculation for coarse-grained (CG) DNA, based on the original implementation of cgheliparam
 
