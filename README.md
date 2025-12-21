@@ -22,6 +22,14 @@ Shift, Slide, Rise, Tilt, Roll, Twist
 ## ✔ **Local Helical Parameters**
 X-disp, Y-disp, Helical Rise, Inclination, Tip, Helical Twist
 
+## ✔ **Writhe**
+Writhe of circular DNA, based on the method presented in the following paper
+> Comparison of Molecular Contours for Measuring Writhe in Atomistic Supercoiled DNA \
+> Thana Sutthibutpong, Sarah A. Harris, and Agnes Noy \
+> Journal of Chemical Theory and Computation 2015 11 (6), 2768-2775 \
+> https://doi.org/10.1021/acs.jctc.5b00035 \
+The code for the same is based out of the implementation of <a href=https://github.com/agnesnoy/WrLINE>WrLINE</a>.\
+Here we use BB2 Martini Bead instead of C1' used in all-atom WrLINE code.
 ---
 
 ## 📦 1. Requirements
@@ -64,6 +72,20 @@ options:
                         Output folder to store results
 ```
 
+For Writhe Calculation of Circular DNA Models:
+```
+python calcWrithe.py --top_pdb <.pdb/.gro> --traj_file <.xtc> --nbp <number of bp> --out_folder <output_folder path/name> 
+```
+```
+options:
+  -h, --help            show this help message and exit
+  --top_pdb TOP_PDB     Topology/structure file (PDB or GRO)
+  --traj_file TRAJ_FILE
+                        Trajectory file (XTC/TRR) or 'None' for single-frame mode
+  --nbp NBP             Number of BasePairs
+  --out_folder OUT_FOLDER
+                        Output folder to store results
+```
 
 ### 📚 Citation
 
