@@ -407,7 +407,7 @@ def main():
     data = {'rA' : rA, 'rB' : rB, 'r' : r, 'rC' : rC, 'tw' : tw, 'r1' : r1, 'sr' : sr}
     
     with open(f'{out_folder}/workspace.pkl','wb') as file:
-        pcikle.dump(data, file)
+        pickle.dump(data, file)
 
     print('Saved !')
     
@@ -417,4 +417,5 @@ if __name__ == '__main__':
     print('Writhe Calculation for Coarse-Grain DNA Models')
     print('='*40)
     print('\n')
+
     main()    
