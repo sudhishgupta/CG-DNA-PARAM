@@ -4,8 +4,9 @@ import numpy as np
 import MDAnalysis
 import os
 import time
+import pickle
 
-def Read(u, trajectory=None):
+def Read(u, nbp, trajectory=None):
     
     total_res = len(u.residues)
     nbp = total_res // 2
@@ -16,7 +17,7 @@ def Read(u, trajectory=None):
     for fi, ts in enumerate(u.trajectory if trajectory is not None else [u.trajectory.ts]):
         frameA = []
         frameB = []
-        for i,res in enumerate(range(total_res-1)):
+        for i,res in enumerate(range(total_res)):
             u_atoms = u.residues
             base = u_atoms[res]
             resname = u.residues[res].resname
@@ -24,7 +25,7 @@ def Read(u, trajectory=None):
             xprm = base.atoms.select_atoms("name BB2")
             xprm_cog = xprm.center_of_geometry()
             #print(xprm_cog.shape)
-            if i+1<=300:
+            if i+1<=nbp:
                 frameA.append(xprm_cog)
             else:
                 frameB.append(xprm_cog)
@@ -363,7 +364,7 @@ def main():
     
     print('Reading Trajectories')
     start = time.time()
-    rA,rB,r = Read(uu, trajectory=traj_file)
+    rA,rB,r = Read(uu, nbp, trajectory=traj_file)
     end = time.time()
     print(f'Done!, Time Taken : {end-start : .2f}s')
 
